@@ -13,7 +13,12 @@ lsp.ensure_installed({
     "rust_analyzer",
     "clangd",
     "tsserver",
-    "lua_ls"
+    "lua_ls",
+    "cmake"
+})
+
+lsp.configure("clangd", {
+    cmd = {"clangd", "--query-driver=/usr/bin/clang++"},
 })
 
 local cmp = require("cmp")
